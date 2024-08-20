@@ -1,5 +1,6 @@
 import type { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { QuartzPluginData } from "./quartz/plugins/vfile"
 
 /**
  * Quartz 4.0 Configuration
@@ -86,7 +87,7 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
-    filters: [Plugin.RemoveDrafts()],
+    filters: [Plugin.RemoveDrafts(), Plugin.RemoveViews()],
     emitters: [
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
