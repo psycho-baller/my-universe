@@ -34,7 +34,7 @@ const config: QuartzConfig = {
       "My Kanbans",
       "My Views",
     ],
-    defaultDateType: "created",
+    defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
@@ -71,7 +71,7 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter"],
+        priority: ["filesystem"],
       }),
       Plugin.SyntaxHighlighting({
         theme: {
