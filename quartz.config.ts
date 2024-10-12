@@ -10,6 +10,7 @@ import { QuartzPluginData } from "./quartz/plugins/vfile"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Rami's Universe",
+    pageTitleSuffix: " | Rami Maalouf",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
