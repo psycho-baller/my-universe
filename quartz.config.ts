@@ -34,7 +34,6 @@ const config: QuartzConfig = {
       "My Input Collections",
       "My Kanbans",
       "My Views",
-      "My-Greenhouse/My-Greenhouse",
     ],
     defaultDateType: "created",
     theme: {
@@ -73,7 +72,7 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter"],
+        priority: ["frontmatter", "filesystem"],
       }),
       Plugin.SyntaxHighlighting({
         theme: {
