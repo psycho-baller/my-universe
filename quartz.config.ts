@@ -35,7 +35,7 @@ const config: QuartzConfig = {
       "My Kanbans",
       "My Views",
     ],
-    defaultDateType: "modified",
+    defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
@@ -84,7 +84,9 @@ const config: QuartzConfig = {
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
-      Plugin.CrawlLinks({ lazyLoad: true }),
+      Plugin.CrawlLinks({
+        markdownLinkResolution: "shortest",
+      }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
