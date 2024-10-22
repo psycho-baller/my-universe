@@ -1,6 +1,6 @@
 import type { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
-import { QuartzPluginData } from "./quartz/plugins/vfile"
+// import { QuartzPluginData } from "./quartz/plugins/vfile"
 
 /**
  * Quartz 4.0 Configuration
@@ -34,6 +34,7 @@ const config: QuartzConfig = {
       "My Input Collections",
       "My Kanbans",
       "My Views",
+      "My-Greenhouse/My-Greenhouse",
     ],
     defaultDateType: "created",
     theme: {
@@ -72,7 +73,7 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["filesystem"],
+        priority: ["frontmatter"],
       }),
       Plugin.SyntaxHighlighting({
         theme: {
@@ -86,6 +87,9 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({
         markdownLinkResolution: "shortest",
+        externalLinkIcon: true,
+        prettyLinks: true,
+        lazyLoad: true,
       }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
