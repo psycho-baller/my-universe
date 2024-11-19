@@ -36,6 +36,7 @@ const config: QuartzConfig = {
       "My Views",
     ],
     defaultDateType: "created",
+    generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
