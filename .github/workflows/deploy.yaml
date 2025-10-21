@@ -1,5 +1,5 @@
 name: Deploy Quartz site to GitHub Pages
- 
+
 on:
   schedule:
     - cron: '0 15 * * *' # Runs every day at 10 AM EST
@@ -7,16 +7,16 @@ on:
     branches:
       - v4
   workflow_dispatch: # Allows manual triggering
- 
+
 permissions:
   contents: read
   pages: write
   id-token: write
- 
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
- 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
           fi
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Install Dependencies
         run: npm i
       - name: CI
@@ -56,7 +56,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
- 
+
   deploy:
     needs: build
     environment:
