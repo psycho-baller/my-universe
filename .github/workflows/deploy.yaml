@@ -2,7 +2,7 @@ name: Deploy Quartz site to GitHub Pages
 
 on:
   schedule:
-    - cron: '0 15 * * *' # Runs every day at 10 AM EST
+    # - cron: '0 15 * * *' # Runs every day at 10 AM EST
   push:
     branches:
       - v4
